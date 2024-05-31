@@ -39,7 +39,7 @@ import os, platform
 
 from concurrent.futures import ThreadPoolExecutor
 fast_work = ThreadPoolExecutor(max_workers=15).submit
-ua = ["Dalvik/2.1.0 (Linux; U; Android 12; moto g play - 2023 Build/S3SGS32.39-181-5) [FBAN/Orca-Android;FBAV/424.0.0.25.113;FBPN/com.facebook.orca;FBLC/en_US;FBBV/510343531;FBCR/Verizon ;FBMF/motorola;FBBD/motorola;FBDV/moto g play - 2023;FBSV/12;FBCA/armeabi-v7a:armeabi;FBDM/{density=1.75,width=720,height=1439};FB_FW/1;]"]
+ua = ["Dalvik/2.1.0 (Linux; U; Android 5.1.1; vivo V3Max Build/LMY47V) [FBAN/Orca-Android;FBAV/233.0.0.16.158;FBPN/com.facebook.orca;FBLC/en_US;FBBV/172917909;FBCR/null;FBMF/vivo;FBBD/vivo;FBDV/vivo V3Max;FBSV/5.1.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920 [FBAN/FB4A;FBAV/183.0.0.27.123;FBBV/17656946;FBDM/{density=2.5,width=1280,height=1920};FBLC/en_PK;FBCR/Nepal_Telecom;FBMF/Vivo;FBBD/Vivo;FBPN/com.facebook.katana;FBDV/GT-N7100;FBSV/7.3.2;FBOP/1;FBCA/armeabi-v7a:armeabi;]"]
     
 model2 = requests.get('https://gist.githubusercontent.com/Nox-Naved/0588acb2b77932048a251d50a973029b/raw/f6de01ac684131b5353854ee114880fb00227cee/Model60').text.splitlines()
 totaldmp = 0
@@ -56,20 +56,20 @@ srange = 0
 saved = []
 totaldmp = 0
 filter = []
-fbav = random.choice(['77.0.0.20.66','445.0.0.34.118','443.0.0.23.229','427.0.0.31.63','426.0.0.26.50','420.0.0.32.61','419.0.0.37.71','419.0.0.29.71','418.0.0.33.69','417.0.0.33.65','382.0.0.33.111','380.0.0.29.109','379.0.0.24.109','322.0.0.35.121','326.0.0.34.120','325.0.0.36.170','319.0.0.39.120','317.0.0.51.119','317.0.0.51.119','315.0.0.47.113','314.1.0.45.119','314.0.0.43.119','313.0.0.35.119','312.0.0.45.117','310.0.0.50.118','309.0.0.47.119','307.0.0.40.111','304.0.0.39.118','305.0.0.40.120','302.0.0.45.119','300.2.0.58.129','300.1.0.57.129','299.0.0.51.236','296.0.0.44.119','294.0.0.39.118','293.0.0.43.120','292.0.0.60.123','290.0.0.44.121','284.0.0.50.107','279.0.0.43.120','231.0.0.39.113','229.0.0.35.117','227.0.0.43.158','224.0.0.33.114','222.0.0.48.113','220.0.0.46.112','219.0.0.42.114','209.0.0.39.91','216.0.0.38.104','207.0.0.33.100','203.0.0.16.293'])
-fbbv = random.choice(['30034644','442611883','442410873','316416485','315814638','316015926','443010639','444209262','444411021','447626277','442812559','442811621','282418109','282616749','282818448','282818049','283017963','283419120','283419120','284012886','285022375','285217161','284416989','274797363','282018877','281818581','239634218','248231979','250937654','251953126','253340452','255824605','261476335','263723580','265245015','268946212','272369098','271126404','231020918','448014984','137424444','140791845','149356190','142863906','152362346','153408057','155323327','157411927','163964762','160467766','162302402'])
+fbav = random.choice(['445.0.0.34.118','443.0.0.23.229','427.0.0.31.63','426.0.0.26.50','420.0.0.32.61','419.0.0.37.71','419.0.0.29.71','418.0.0.33.69','417.0.0.33.65','382.0.0.33.111','380.0.0.29.109','379.0.0.24.109','322.0.0.35.121','326.0.0.34.120','325.0.0.36.170','319.0.0.39.120','317.0.0.51.119','317.0.0.51.119','315.0.0.47.113','314.1.0.45.119','314.0.0.43.119','313.0.0.35.119','312.0.0.45.117','310.0.0.50.118','309.0.0.47.119','307.0.0.40.111','304.0.0.39.118','305.0.0.40.120','302.0.0.45.119','300.2.0.58.129','300.1.0.57.129','299.0.0.51.236','296.0.0.44.119','294.0.0.39.118','293.0.0.43.120','292.0.0.60.123','290.0.0.44.121','284.0.0.50.107','279.0.0.43.120','231.0.0.39.113','229.0.0.35.117','227.0.0.43.158','224.0.0.33.114','222.0.0.48.113','220.0.0.46.112','219.0.0.42.114','209.0.0.39.91','216.0.0.38.104','207.0.0.33.100','203.0.0.16.293'])
+fbbv = random.choice(['442611883','442410873','316416485','315814638','316015926','443010639','444209262','444411021','447626277','442812559','442811621','282418109','282616749','282818448','282818049','283017963','283419120','283419120','284012886','285022375','285217161','284416989','274797363','282018877','281818581','239634218','248231979','250937654','251953126','253340452','255824605','261476335','263723580','265245015','268946212','272369098','271126404','231020918','448014984','137424444','140791845','149356190','142863906','152362346','153408057','155323327','157411927','163964762','160467766','162302402'])
 def randBuildLSB():
     vchrome = str(random.randint(100,925))+".0.0."+str(random.randint(1,8))+"."+str(random.randint(40,150))
     VAPP = random.randint(410000000,499999999)
-    END = '[FBAN/FB4A;FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/'+'{density=1.9125,width=720,height=1400}'+';FBLC/en_US;FBRV/272210345;FBCR/Boost Mobile;FBMF/motorola;FBBD/motorola;FBPN/com.facebook.katana;FBDV/moto g fast;FBSV/10;FBBK/1;FBOP/1;FBCA/arm64-v8a:;]'
+    END = '[FBAN/FB4A;FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/'+'{density=2.0,width=720,height=1280}'+';FBLC/en_US;FBRV/304282940;FBCR/cricket;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/SAMSUNG-SM-J727AZ;FBSV/7.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]'
     ua = f'Dalvik/2.1.0 (Linux; U; Android {random.randint(4,13)}; V2027 Build/QP1A.{random.randint(111111,999999)}.{random.randint(111,999)})[FBAN/FB4A;FBAV/45.0.0.{str(random.randint(1000,9000))};FBBV/{str(random.randint(100000,900000))};'+END
     return ua
 
 def randBuildvsskj():
-    END = '[FBAN/FB4A;FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/'+'{density=1.5,width=480,height=854}'+';FBLC/en_US;FBCR/Etisalat NG;FBMF/TECNO;FBBD/TECNO;FBPN/com.facebook.katana;FBDV/TECNO-W3;FBSV/6.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]'
+    END = '[FBAN/FB4A;FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/'+'{density=2.0,width=720,height=1280}'+';FBLC/en_US;FBRV/304282940;FBCR/cricket;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/SAMSUNG-SM-J727AZ;FBSV/7.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]'
     ua = f'Dalvik/2.1.0 (Linux; U; Android {random.randint(4,13)}; V2027 Build/QP1A.{random.randint(111111,999999)}.{random.randint(111,999)})[FBAN/FB4A;FBAV/45.0.0.{str(random.randint(1000,9000))};FBBV/{str(random.randint(100000,900000))};'+END
     return ua
-    
+
 
 sys.stdout.write('\x1b]2; Dragon\x07')
 S = '\033[1;37m'
@@ -99,11 +99,28 @@ logo =                                          """
 
 \033[1;37m---------------------------  DRAGON-HERE ----------------------------------
 
-\033[1;32m Owner   :            Aftab \033[1;36m𓆩♡𓆪
-\033[1;36m Facebook:            Aftab Khan
-\033[1;32m Version :            2.5
+\033[1;32m Owner   :            Unknown 
+\033[1;36m Facebook:            Secret he
+\033[1;32m Version :            Private
 
 \033[1;37m--------------------------------------------------------------------------- """
+
+def clear():
+	os.system('clear')
+def back():
+	login()
+
+ah="khan-"
+imt="-A4786=="
+ak=" Aftab-"
+myid=uuid.uuid4().hex[:10].upper()
+try:
+	key1 = open('/data/data/com.termux/files/usr/bin/.mrAFTAB -cov', 'r').read()
+except:
+	kok=open('/data/data/com.termux/files/usr/bin/.mrAFTAB -cov', 'w')
+	kok.write(myid+imt)
+	kok.close()
+
 
 def clear():
     os.system("clear")
@@ -117,8 +134,7 @@ def result(OKs,cps):
         print(' TOTAL OK: %s' % str(len(oks)))
         print(' TOTAL CP: %s' % str(len(cps)))
         print(47*'-')
-        input("Press enter to back ")
-        exit()
+        
 def sarfraz():   
     os.system('clear')
     print(logo)
@@ -132,8 +148,8 @@ def sarfraz():
     else:
         print('\n Select valid option ... ')
         time.sleep(2)
-        Dragon(allkey)
-
+        
+       
 def method_crack():
     global methods
     clear()
@@ -471,7 +487,35 @@ def remove_Tc():
          
 def removef():
         os.system('rm -rf self.file');print(f'\n{R}Files Removed Successfully ...')
-        Dragon(allkey)            
- 
-
-sarfraz()
+        
+      
+def Subscraption():
+	key1=open('/data/data/com.termux/files/usr/bin/.mrAFTAB -cov', 'r').read()
+	clear()
+	print(logo)
+	r1=requests.get("https://github.com/Aftabkhan5/Approve/blob/main/Approve.txt").text
+	if key1 in r1:
+		os.system('clear')
+		print(logo)
+		Main()
+	else:
+		os.system("clear")
+		print(logo)
+		print("\t \033[1;32m First Get Approvel\033[1;37m ")
+		time.sleep(1)
+		os.system("clear")
+		print(logo)
+		print ("")
+		print(" \033[1;32m AFTAB Toll Free BUT You Need Get Approved First\033[1;37m\n")
+		print(" \033[1;32m Note : AFTAB FREE HA BHAIYO ENJOYA   \033[1;37m")
+		print ("")
+		print(" Your Key is Not Approved ")
+		print("")
+		print(" Copy And Send Key To Admin")
+		print ("")
+		print (" Your Key : "+ak+ah+key1 )
+		print ("")
+		name = input(" Your Name : ")
+		print ("")
+		input(" Press Enter To Send Key")
+Subscraption()
